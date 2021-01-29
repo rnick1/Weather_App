@@ -1,0 +1,17 @@
+#search-bar {
+    margin: 10px;
+}
+
+.card {
+    margin: 10px;
+}
+
+.navbar {
+    background-color: #11698e;
+    color: white;
+}
+
+.navbar-brand{
+    margin-left: 40%;
+}
+

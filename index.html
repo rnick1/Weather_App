@@ -13,30 +13,40 @@
 
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg">
         <div class="container">
-            <h1 class="navbar-brand">Navbar</h1>
+            <h1 class="navbar-brand">Weather Dashboard</h1>
         </div>
     </nav>
 
-    <div class="container">
         <div class="row">
             <div class="col-sm-3">
-                <nav class="navbar navbar-light bg-light">
-                    <form class="form-inline">
-                        <h5>Search for a City:</h5>
-                      <input class="form-control sm" type="search" placeholder="Search" aria-label="Search">
-                      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                    </form>
-                </nav>        
+                <div class="card">
+                    <div class="card-header">
+                        <input type="search" placeholder="Search for a City..." id="search-bar">
+                        <button>Search</button>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">This</li>
+                        <li class="list-group-item">This</li>
+                        <li class="list-group-item">And this will go away eventually to be replaced with saved search results.</li>
+                    </ul>
+                </div>
             </div>
 
-        <div class="col-sm-9">
-              2 of 2
-         </div>      
-    </div>
-
-
+            <div class="col-sm-9">
+                <div class="card">
+                    <div class="card">
+                        <p>This is where the current search result will go</p>
+                    </div>
+                        <br> 
+                    <div class="card">
+                        <h4 class="card-header">5-Day Forecast:</h4>
+                        <p>This is where the five day forecast will be displayed.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
 
     <link rel="stylesheet" href="script.js">
 </body>
