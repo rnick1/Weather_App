@@ -1,3 +1,33 @@
+var searchBar = document.querySelector('#search-bar');
+var searchSubmitButton = document.querySelector('#search-submit-button');
+var savedSearches = document.querySelector('#saved-searches');
+var currentWeather = document.querySelector('#current-weather');
+var fiveDayForecast = document.querySelector('#five-day-forecast');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // (Pseudocode)This is how I am going to utilize the information from the open weather app:
 
 // (Variables here)
