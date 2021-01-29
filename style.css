@@ -9,9 +9,9 @@
 .navbar {
     background-color: #11698e;
     color: white;
+    font-size: 100px;
 }
 
-.navbar-brand{
-    margin-left: 40%;
+.navbar-brand {
+    margin-left: 35%;
 }
-

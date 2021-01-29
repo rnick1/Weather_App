@@ -15,17 +15,19 @@
 
     <nav class="navbar navbar-expand-lg">
         <div class="container">
-            <h1 class="navbar-brand">Weather Dashboard</h1>
+            <h1 class="navbar-brand" style="font-size: 35px;">Weather Dashboard</h1>
         </div>
     </nav>
 
     <div class="row">
         <div class="col-sm-3">
             <div class="card">
-                <div class="card-header">
+
+                <div class="card-header" style="background-color: #11698e;">
                     <input id="search-bar" type="search" placeholder="Search for a City...">
                     <button id="search-submit-button">Search</button>
                 </div>
+
                 <ul class="list-group list-group-flush" id="saved-search-results">
                     <!-- Remember to dynamically create these elements in the js each time the user searches for a city.-->
                     <!-- Delete these when I have reached that part of the process.-->
@@ -33,20 +35,19 @@
                     <li class="list-group-item">This</li>
                     <li class="list-group-item">And this will go away eventually to be replaced with saved search results.</li>
                 </ul>
+
             </div>
         </div>
     
         <div class="col-sm-9">
             <div class="card">
 
-                <div class="card" id="current-weather">
+                <div class="card" id="current-weather" >
                     <p>This is where the current search result will go</p>
                 </div>
 
-                <br>
-
                 <div class="card" id="five-day-forecast">
-                    <h4 class="card-header">5-Day Forecast:</h4>
+                    <h4 class="card-header" style="background-color: #11698e; color: white;">5-Day Forecast:</h4>
                     <p>This is where the five day forecast will be displayed.</p>
                 </div>
 
