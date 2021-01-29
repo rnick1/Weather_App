@@ -14,20 +14,6 @@ var fiveDayForecast = document.querySelector('#five-day-forecast');
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // (Pseudocode)This is how I am going to utilize the information from the open weather app:
 
 // (Variables here)
