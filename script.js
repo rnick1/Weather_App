@@ -24,12 +24,10 @@ button.addEventListener('click', searchWeather)
 
 
 
-
-
 // (Pseudocode)This is how I am going to utilize the information from the open weather app:
 
 // (Variables here)
-// .catch(err => alert('Wrong city name!'))
+// .catch(err => alert('Incorrect city'))
 
 
 
