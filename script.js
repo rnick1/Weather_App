@@ -47,6 +47,11 @@ function searchWeather() {
                 uvIndex.textContent = 'UV Index: ' + data.current.uvi;
                 currentWeather.append(uvIndex);
             });
+        var savedCityName = document.createElement('li');
+        savedCityName.textContent = data.name
+        savedSearches.append(savedCityName);
+        localStorage.setItem('savedCityName', JSON.stringify(savedCityName));
+
     });
 };
 
