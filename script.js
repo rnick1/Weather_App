@@ -35,7 +35,19 @@ function searchWeather() {
             currentWeather.append(longitude);
             currentWeather.append(latitude);
 
-    })
+        var requestUvUrl = 'https://api.openweathermap.org/data/2.5/onecall?lat=' + data.coord.lat + '&lon=' + data.coord.lon + '&appid=fdd4a04e93a26488d7033be9fdc7f5e6';
+
+        fetch(requestUvUrl)
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (data) {
+                console.log(data);
+                var uvIndex = document.createElement('p');
+                uvIndex.textContent = 'UV Index: ' + data.current.uvi;
+                currentWeather.append(uvIndex);
+            });
+    });
 };
 
 searchSubmitButton.addEventListener('click', searchWeather)
