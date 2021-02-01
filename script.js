@@ -35,6 +35,7 @@ function searchWeather() {
             currentWeather.append(temperature);
             currentWeather.append(humidity);
             currentWeather.append(windSpeed);
+            // currentWeather.append(uvIndex);
 
           }
 )};
