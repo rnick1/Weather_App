@@ -39,3 +39,14 @@ fetch(requestFiveDayUrl)
         // savedSearchResult.textContent = data.name;
         // savedSearches.append(savedSearchResult);
         // savedSearchResult.append(aEl);
+
+
+        var savedSearchValues = []
+        var userSearchValues = {
+            city: data.name,
+            link: requestWxUrl,
+        };
+        savedSearchValues.push(userSearchValues)
+
+        localStorage.setItem('Cities', JSON.stringify(savedSearchValues))
+        console.log(savedSearchValues)

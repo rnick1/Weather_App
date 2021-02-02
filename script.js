@@ -4,6 +4,7 @@ var savedSearches = document.querySelector('#saved-searches');
 var currentWeather = document.querySelector('#current-weather');
 var fiveDayForecast = document.querySelector('#five-day-forecast');
 var cityName = document.querySelector('#city-name');
+var searchSaveButton = document.querySelector('#search-save-button');
 
 function searchWeather() {
     var requestWxUrl = 'https://api.openweathermap.org/data/2.5/weather?q=' + userSearch.value + '&units=imperial&appid=fdd4a04e93a26488d7033be9fdc7f5e6';
@@ -38,17 +39,8 @@ function searchWeather() {
                 uvIndex.textContent = 'UV Index: ' + data.current.uvi;
                 currentWeather.append(uvIndex);
             });
-        var savedSearchValues = []
-        var userSearchValues = {
-            city: data.name,
-            link: requestWxUrl,
-        };
-        savedSearchValues.push(userSearchValues)
-
-        localStorage.setItem('Cities', JSON.stringify(savedSearchValues))
-        console.log(savedSearchValues)
-
 
     });
 };
+
 searchSubmitButton.addEventListener('click', searchWeather)
