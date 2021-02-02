@@ -38,20 +38,17 @@ function searchWeather() {
                 uvIndex.textContent = 'UV Index: ' + data.current.uvi;
                 currentWeather.append(uvIndex);
             });
+        var savedSearchValues = []
+        var userSearchValues = {
+            city: data.name,
+            link: requestWxUrl,
+        };
+        savedSearchValues.push(userSearchValues)
 
-        var savedCities = [];
+        localStorage.setItem('Cities', JSON.stringify(savedSearchValues))
+        console.log(savedSearchValues)
 
-        savedCities.push(userSearch.value);
 
-        localStorage.setItem('savedCities', JSON.stringify(savedCities));
-        console.log(localStorage);
-
-        // var savedSearchResult = document.createElement('button');
-        // var aEl =  document.createElement('a');
-        // aEl.setAttribute("href", requestUvUrl);
-        // savedSearchResult.textContent = data.name;
-        // savedSearches.append(savedSearchResult);
-        // savedSearchResult.append(aEl);
     });
 };
 searchSubmitButton.addEventListener('click', searchWeather)

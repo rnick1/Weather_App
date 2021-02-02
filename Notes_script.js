@@ -31,3 +31,11 @@ fetch(requestFiveDayUrl)
 .then(function (data) {
     console.log(data);
 })
+
+// This is for the buttons:
+        // var savedSearchResult = document.createElement('button');
+        // var aEl =  document.createElement('a');
+        // aEl.setAttribute("href", requestUvUrl);
+        // savedSearchResult.textContent = data.name;
+        // savedSearches.append(savedSearchResult);
+        // savedSearchResult.append(aEl);
