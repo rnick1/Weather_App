@@ -39,7 +39,7 @@ function searchWeather() {
                 uvIndex.textContent = 'UV Index: ' + data.current.uvi;
                 currentWeather.append(uvIndex);
             });
-
+        
     });
 };
 
