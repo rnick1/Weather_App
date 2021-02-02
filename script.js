@@ -39,12 +39,19 @@ function searchWeather() {
                 currentWeather.append(uvIndex);
             });
 
-        var savedSearchResult = document.createElement('button');
-        var aEl =  document.createElement('a');
-        aEl.setAttribute("href", requestUvUrl);
-        savedSearchResult.textContent = data.name;
-        savedSearches.append(savedSearchResult);
-        savedSearchResult.append(aEl);
+        var savedCities = [];
+
+        savedCities.push(userSearch.value);
+
+        localStorage.setItem('savedCities', JSON.stringify(savedCities));
+        console.log(localStorage);
+
+        // var savedSearchResult = document.createElement('button');
+        // var aEl =  document.createElement('a');
+        // aEl.setAttribute("href", requestUvUrl);
+        // savedSearchResult.textContent = data.name;
+        // savedSearches.append(savedSearchResult);
+        // savedSearchResult.append(aEl);
     });
 };
 searchSubmitButton.addEventListener('click', searchWeather)
