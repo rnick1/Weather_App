@@ -50,3 +50,20 @@ fetch(requestFiveDayUrl)
 
         localStorage.setItem('Cities', JSON.stringify(savedSearchValues))
         console.log(savedSearchValues)
+
+
+        for (var i = 0; i < historyArray.length; i++) {
+            var searchText = historyArray;
+            console.log(historyArray);
+            var currentSearch = document.createElement("button");
+            currentSearch.textContent = searchText;
+            savedSearches.append(currentSearch);
+        };
+
+            // console.log(historyArray.length);
+    
+    // for(var i = 0; i < historyArray.length; i++)
+    // var savedSearch = historyArray[i].history
+    // savedSearchLocation = document.createElement('button')
+    // savedSearchLocation.textContent = savedSearch;
+    // savedSearches.append(savedSearchLocation)
