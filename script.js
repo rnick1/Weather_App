@@ -17,25 +17,14 @@ function searchWeather() {
             var temperature = document.createElement('p');
             var humidity = document.createElement('p');
             var windSpeed = document.createElement('p');
-            var longitude = document.createElement('p');
-            var latitude = document.createElement('p');
-            var savedSearchResult = document.createElement('button');
-            // savedSearchResult.setAttribute("href" = requestUvUrl);
-
             cityName.textContent = data.name;
             temperature.textContent = 'Temperature: ' + data.main.temp + ' degrees F';
             humidity.textContent = 'Humidity: ' + data.main.humidity + ' %';
             windSpeed.textContent = 'Wind Speed: ' + data.wind.speed + ' MPH';
-            longitude.textContent = 'Longitude: ' + data.coord.lon;
-            latitude.textContent = 'Latitude: ' + data.coord.lat;
-            savedSearchResult.textContent = data.name;
             currentWeather.append(cityName);
             currentWeather.append(temperature);
             currentWeather.append(humidity);
             currentWeather.append(windSpeed);
-            currentWeather.append(longitude);
-            currentWeather.append(latitude);
-            savedSearches.append(savedSearchResult);
 
         var requestUvUrl = 'https://api.openweathermap.org/data/2.5/onecall?lat=' + data.coord.lat + '&lon=' + data.coord.lon + '&units=imperial&appid=fdd4a04e93a26488d7033be9fdc7f5e6';
 
@@ -50,17 +39,12 @@ function searchWeather() {
                 currentWeather.append(uvIndex);
             });
 
-            var requestFiveDayUrl = 'https://api.openweathermap.org/data/2.5/forecast?q=' + userSearch.value + '&appid=fdd4a04e93a26488d7033be9fdc7f5e6';
-            
-            fetch(requestFiveDayUrl)
-            .then(function (response) {
-                return response.json();
-            })
-            .then(function (data) {
-                console.log(data);
-            })
-
+        var savedSearchResult = document.createElement('button');
+        var aEl =  document.createElement('a');
+        aEl.setAttribute("href", requestUvUrl);
+        savedSearchResult.textContent = data.name;
+        savedSearches.append(savedSearchResult);
+        savedSearchResult.append(aEl);
     });
 };
-
 searchSubmitButton.addEventListener('click', searchWeather)

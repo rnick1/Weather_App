@@ -1,4 +1,4 @@
-        // Code for use with local storage:
+        // Code to use with local storage:
         var savedUserSearches = [];
         var localStorageContent = localStorage.getItem('savedUserSearches')
         var searches = JSON.parse(localStorageContent)
@@ -17,3 +17,17 @@
             savedCity = searches[i].city;
             savedSearches.append(savedCity);
         }
+
+
+
+
+// This is for the 5-day URL:
+var requestFiveDayUrl = 'https://api.openweathermap.org/data/2.5/forecast?q=' + userSearch.value + '&appid=fdd4a04e93a26488d7033be9fdc7f5e6';
+            
+fetch(requestFiveDayUrl)
+.then(function (response) {
+    return response.json();
+})
+.then(function (data) {
+    console.log(data);
+})
