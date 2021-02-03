@@ -24,7 +24,20 @@ p {
     margin-left: 25px;
 }
 
-/* #saved-searches {
-    margin-left: 25px;
+#forecast {
+    background-color: #d6e0f0;
+    width: 35%;
+    margin-top: 10px;
+}
 
-} */
+.day {
+    text-align: center;
+}
+
+#current-weather {
+    background-color: #d6e0f0;
+}
+
+.card-body {
+    width: 33%
+}
