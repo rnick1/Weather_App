@@ -1,23 +1,15 @@
-var userSearch = document.querySelector('#search-bar');
 var searchSubmitButton = document.querySelector('#search-submit-button');
-var savedSearches = document.querySelector('#saved-searches');
 var currentWeather = document.querySelector('#current-weather');
 var fiveDayForecast = document.querySelector('#five-day-forecast');
 var cityName = document.querySelector('#city-name');
 var searchSaveButton = document.querySelector('#search-save-button');
+var savedSearches = document.querySelector('#saved-searches');
+var userSearch = document.querySelector('#search-bar');
 var historyArray = JSON.parse(localStorage.getItem("history")) || [];
 
 function searchWeather() {
     var requestWxUrl = 'https://api.openweathermap.org/data/2.5/weather?q=' + userSearch.value + '&units=imperial&appid=fdd4a04e93a26488d7033be9fdc7f5e6';
-    historyArray.push(userSearch.value)
-    localStorage.setItem("history", JSON.stringify(historyArray))
-
-    for(var i = 0; i < historyArray.length; i++) {
-    var button = $('<button></button')
-    button.text(historyArray[i])
-    $('.saved-searches').append(button)
-    }
-
+    
     fetch(requestWxUrl)
         .then(function (response) {
             return response.json();
@@ -35,7 +27,7 @@ function searchWeather() {
             currentWeather.append(temperature);
             currentWeather.append(humidity);
             currentWeather.append(windSpeed);
-
+        
         var requestUvUrl = 'https://api.openweathermap.org/data/2.5/onecall?lat=' + data.coord.lat + '&lon=' + data.coord.lon + '&units=imperial&appid=fdd4a04e93a26488d7033be9fdc7f5e6';
 
         fetch(requestUvUrl)
@@ -48,8 +40,17 @@ function searchWeather() {
                 uvIndex.textContent = 'UV Index: ' + data.current.uvi;
                 currentWeather.append(uvIndex);
             });
-        
-    });
+
+            historyArray.push(userSearch.value)
+            localStorage.setItem("history", JSON.stringify(historyArray))
+
+            for(var i = 0; i < historyArray.length; i++) 
+            var savedCity = historyArray[i]
+            var savedSearchButton = document.createElement('button')
+            savedSearchButton.textContent = savedCity
+            savedSearches.append(savedSearchButton)
+        });
+
 };
 
 searchSubmitButton.addEventListener('click', searchWeather)
