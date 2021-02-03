@@ -1,5 +1,6 @@
 #search-bar {
     margin: 10px;
+    max-width: 90%;
 }
 
 .card {
@@ -12,9 +13,9 @@
     font-size: 100px;
 }
 
-.navbar-brand {
+/* .navbar-brand {
     margin-left: 35%;
-}
+} */
 
 h3 {
     margin-left: 25px;
@@ -26,7 +27,7 @@ p {
 
 #forecast {
     background-color: #d6e0f0;
-    width: 35%;
+    width: 95%;
     margin-top: 10px;
 }
 
