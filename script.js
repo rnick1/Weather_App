@@ -8,9 +8,9 @@ var savedSearches = document.querySelector('#saved-searches');
 var userSearch = document.querySelector('#search-bar');
 var historyArray = JSON.parse(localStorage.getItem("history")) || [];
 // searchWeather function runs whenever the user clicks search
-function searchWeather() {
+function searchWeather(searchedCity) {
     // This first fetch request takes the name of the city the user types into the search bar and collects the city name, latitude, and longitude.
-    var requestWxUrl = 'https://api.openweathermap.org/data/2.5/weather?q=' + userSearch.value + '&units=imperial&appid=fdd4a04e93a26488d7033be9fdc7f5e6';
+    var requestWxUrl = 'https://api.openweathermap.org/data/2.5/weather?q=' + searchedCity + '&units=imperial&appid=fdd4a04e93a26488d7033be9fdc7f5e6';
     
     fetch(requestWxUrl)
         .then(function (response) {
@@ -71,14 +71,37 @@ function searchWeather() {
             });
             // This code is where I am taking city names and storing it in local storage. My biggest challenge in this project has been to get it 
             // to populate the saved searches section without clearing each time the browser refreshes.
-            historyArray.push(userSearch.value)
+            historyArray.push(searchedCity)
             localStorage.setItem("history", JSON.stringify(historyArray))
 
-            for(var i = 0; i < historyArray.length; i++) 
-            var savedCity = historyArray[i]
-            var savedSearchButton = document.createElement('button')
-            savedSearchButton.textContent = savedCity
-            savedSearches.append(savedSearchButton)
+            renderHistory();
+
         });
 };
-searchSubmitButton.addEventListener('click', searchWeather)
+
+function renderHistory() {
+    savedSearches.innerHTML = '';
+    fiveDayForecast.innerHTML = '';
+
+    for(var i = 0; i < historyArray.length; i++) {
+        var savedCity = historyArray[i]
+        var savedSearchButton = document.createElement('button')
+        savedSearchButton.textContent = savedCity
+        savedSearches.append(savedSearchButton)
+    }
+
+}
+savedSearches.addEventListener('click', function(e) {
+    currentWeather.innerHTML = '';
+    fiveDayForecast.innerHTML = '';
+    e.preventDefault();
+    console.log(e);
+    console.log(e.target);
+    var nameButton = e.target
+    searchWeather(nameButton.textContent);
+})
+searchSubmitButton.addEventListener('click', function(e) {
+    searchWeather(userSearch.value);
+
+})
+renderHistory();
