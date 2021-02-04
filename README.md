@@ -30,6 +30,6 @@ THEN I am again presented with current and future conditions for that city
 
 ## Here is the weather dashboard:
 
-![image](https://github.com/rnick1/Work_Day_Planner/blob/main/Assets/Workday_Planner.png)
+![image](https://github.com/rnick1/Weather_App/blob/main/Assets/Weather_Dashboard.png)
 
 ### Note: This application is live! The URL is: 
