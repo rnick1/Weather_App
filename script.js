@@ -45,7 +45,7 @@ function searchWeather(searchedCity) {
                 currentWeather.append(temperature);
                 currentWeather.append(humidity);
                 currentWeather.append(uvIndex);
-                if(uvIndex > 7.99) {
+                if(data.current.uvi > 7.99) {
                 uvIndex.setAttribute('class', 'uv-unsafe')
                 }
                 else{
@@ -73,6 +73,12 @@ function searchWeather(searchedCity) {
                 forecastDiv.append(forTemperature);
                 forecastDiv.append(forHumidity);
                 forecastDiv.append(forUVI);
+                if(data.daily[i].uvi > 7.99) {
+                forUVI.setAttribute('class', 'uv-unsafe')
+                }
+                else{
+                forUVI.setAttribute('class', 'uv-safe')
+                }
                 };
 
             });
