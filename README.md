@@ -36,4 +36,4 @@ THEN I am again presented with current and future conditions for that city
 
 ![image](https://github.com/rnick1/Weather_App/blob/main/Assets/Weather_Dashboard.png)
 
-### Note: This application is live! The URL is: 
+### Note: This application is live! The URL is: https://rnick1.github.io/Weather_App/
