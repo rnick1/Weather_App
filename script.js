@@ -21,10 +21,12 @@ function searchWeather(searchedCity) {
             // This displays the city name for the current weather.
             var cityName = document.createElement('h3');
             var currentDate = document.createElement('p');
-            var currentIcon = document.createElement('fig');
+            var currentIcon = document.createElement('img');
+            var iconurl = "http://openweathermap.org/img/w/" + data.weather[0].icon + ".png";
             cityName.textContent = data.name;
             currentDate.textContent = moment().format('l');
-            currentIcon.textContent = data.weather.icon;
+            currentIcon.setAttribute('src', iconurl);
+            currentIcon.setAttribute('class', 'icon');
             console.log(currentIcon);
             // currentIcon.setAttribute('src','http://openweathermap.org/img/wn/' + data.weather.icon + '@2x.png');
             currentWeather.append(cityName);
@@ -78,10 +80,17 @@ function searchWeather(searchedCity) {
                 forUVI.textContent = 'UV Index: ' + data.daily[i].uvi;
                 fiveDayForecast.append(forecastDiv);
                 forecastDiv.append(day);
+                forecastDiv.append(forecastIcon);
                 forecastDiv.append(forWindSpeed);
                 forecastDiv.append(forTemperature);
                 forecastDiv.append(forHumidity);
                 forecastDiv.append(forUVI);
+
+                var forecastIcon = document.createElement('img');
+                var forecastIconURL = "http://openweathermap.org/img/w/" + data.daily[i].weather[0].icon + ".png";
+                forecastIcon.setAttribute('src', forecastIconURL);
+                forecastIcon.setAttribute('class', 'icon');
+
                 if(data.daily[i].uvi > 7.99) {
                 forUVI.setAttribute('class', 'uv-unsafe')
                 }

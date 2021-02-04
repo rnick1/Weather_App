@@ -1,9 +1,10 @@
-# 06 Server-Side APIs: Weather Dashboard
-## Your Task
+# Weather Dashboard
 
-Use the [OpenWeather API](https://openweathermap.org/api) to retrieve weather data for cities. The documentation includes a section called "How to start" that provides basic setup and usage instructions. You will use `localStorage` to store any persistent data.
+## This repository is for my sixth homework assignment for the University of Washington Full-Stack Coding Bootcamp!
 
-## Acceptance Criteria
+### The goal of this assignment is to utilize skills developed so far to create a personal weather dashboard.
+
+## The Assignment:
 ```
 GIVEN a weather dashboard with form inputs
 WHEN I search for a city
@@ -17,6 +18,11 @@ THEN I am presented with a 5-day forecast that displays the date, an icon repres
 WHEN I click on a city in the search history
 THEN I am again presented with current and future conditions for that city
 ```
+## What was done:
+-By using a fetch command I was able to 
+
+
+
 ## Mock-Up
 The following image shows the web application's appearance and functionality:
 ![The weather app includes a search option, a list of cities, and a five-day forecast and current weather conditions for Atlanta.](Assets\06-server-side-apis-homework-demo.png)
