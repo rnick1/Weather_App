@@ -65,8 +65,7 @@ function searchWeather(searchedCity) {
                 var forTemperature = document.createElement('p');
                 var forHumidity = document.createElement('p');
                 var forUVI = document.createElement('p');
-                day.textContent = moment().add(i, 'days').format('l');  
-                // [i+1] + ' day(s) out';
+                day.textContent = moment().add(i+1, 'days').format('l');  
                 forWindSpeed.textContent = 'Wind Speed: ' + data.daily[i].wind_speed + ' MPH';
                 forTemperature.textContent = 'Temperature: ' + data.daily[i].temp.day + ' degrees F';
                 forHumidity.textContent = 'Humidity: ' + data.daily[i].humidity + ' %';
