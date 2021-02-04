@@ -50,7 +50,7 @@ function searchWeather(searchedCity) {
                 }
                 else{
                 uvIndex.setAttribute('class', 'uv-safe')
-                }
+                };
 
                 // This for-loop gathers and displays weather information for a five day period.
                 for(var i = 0; i < 5; i++) {
@@ -78,7 +78,7 @@ function searchWeather(searchedCity) {
                 }
                 else{
                 forUVI.setAttribute('class', 'uv-safe')
-                }
+                };
                 };
 
             });
@@ -113,5 +113,7 @@ savedSearches.addEventListener('click', function(e) {
 })
 searchSubmitButton.addEventListener('click', function(e) {
     searchWeather(userSearch.value);
+    currentWeather.innerHTML = '';
+
 })
 renderHistory();

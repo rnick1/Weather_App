@@ -50,3 +50,7 @@ p {
 .uv-unsafe{
     background-color: #F05454;
 }
+
+#label{
+    color: white;
+}
