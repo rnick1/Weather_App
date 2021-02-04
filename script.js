@@ -17,7 +17,7 @@ function searchWeather(searchedCity) {
             return response.json();
         })
         .then(function (data) {
-            console.log(data)
+            console.log(data);
             // This displays the city name for the current weather.
             var cityName = document.createElement('h3');
             cityName.textContent = data.name;
@@ -50,7 +50,7 @@ function searchWeather(searchedCity) {
                 var forecastDiv = document.createElement('div');
                 forecastDiv.setAttribute('id', 'forecast');
                 var day = document.createElement('h5');
-                day.setAttribute('class', 'day')
+                day.setAttribute('class', 'day');
                 var forWindSpeed = document.createElement('p');
                 var forTemperature = document.createElement('p');
                 var forHumidity = document.createElement('p');
@@ -66,42 +66,39 @@ function searchWeather(searchedCity) {
                 forecastDiv.append(forTemperature);
                 forecastDiv.append(forHumidity);
                 forecastDiv.append(forUVI);
-                }
+                };
 
             });
             // This code is where I am taking city names and storing it in local storage. My biggest challenge in this project has been to get it 
             // to populate the saved searches section without clearing each time the browser refreshes.
-            historyArray.push(searchedCity)
-            localStorage.setItem("history", JSON.stringify(historyArray))
+            historyArray.push(searchedCity);
+            localStorage.setItem("history", JSON.stringify(historyArray));
 
             renderHistory();
-
         });
 };
 
 function renderHistory() {
     savedSearches.innerHTML = '';
     fiveDayForecast.innerHTML = '';
-
     for(var i = 0; i < historyArray.length; i++) {
-        var savedCity = historyArray[i]
-        var savedSearchButton = document.createElement('button')
+        var savedCity = historyArray[i];
+        var savedSearchButton = document.createElement('button');
         savedSearchButton.textContent = savedCity
-        savedSearches.append(savedSearchButton)
-    }
+        savedSearches.append(savedSearchButton);
+    };
+};
 
-}
 savedSearches.addEventListener('click', function(e) {
     currentWeather.innerHTML = '';
     fiveDayForecast.innerHTML = '';
     e.preventDefault();
     console.log(e);
     console.log(e.target);
-    var nameButton = e.target
+    var nameButton = e.target;
     searchWeather(nameButton.textContent);
 })
 searchSubmitButton.addEventListener('click', function(e) {
     searchWeather(userSearch.value);
-
 })
 renderHistory();
