@@ -19,14 +19,16 @@ WHEN I click on a city in the search history
 THEN I am again presented with current and future conditions for that city
 ```
 ## What was done:
--By using a fetch command I was able to 
+-By using a fetch command I was able to gather data for the current weather conditions as well as the five forecast.
+-By utilizing local storage, I was able to keep the user's search history for future reference.
+-Within the weather information I included weather icons depicting the weather conditions and set the UV index to change color when the UV conditions reach hazardous levels.
 
+## Future improvements:
+-I would like to refine the style further someday.
+-The search history function could use some refining (for example, arrange it so that if the user searches for a city more than once, it would only get displayed once instead of multiple times.)
 
+## Here is the weather dashboard:
 
-## Mock-Up
-The following image shows the web application's appearance and functionality:
-![The weather app includes a search option, a list of cities, and a five-day forecast and current weather conditions for Atlanta.](Assets\06-server-side-apis-homework-demo.png)
+![image](https://github.com/rnick1/Work_Day_Planner/blob/main/Assets/Workday_Planner.png)
 
-    * Uses the OpenWeather API to retrieve weather data.
-
-    * Uses `localStorage` to store persistent data.
+### Note: This application is live! The URL is: 
