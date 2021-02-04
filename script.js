@@ -20,8 +20,11 @@ function searchWeather(searchedCity) {
             console.log(data);
             // This displays the city name for the current weather.
             var cityName = document.createElement('h3');
+            var currentDate = document.createElement('p')
             cityName.textContent = data.name;
+            currentDate.textContent = (moment().format('MMMM Do YYYY, h:mm a'));
             currentWeather.append(cityName);
+            currentWeather.append(currentDate);
         // This fetch request takes the data gathered in the previous fetch request and collects more details regarding wind speed, temperature, 
         // humidity, and the UV index both for the current day and for the five-day forecast.
         var requestUvUrl = 'https://api.openweathermap.org/data/2.5/onecall?lat=' + data.coord.lat + '&lon=' + data.coord.lon + '&units=imperial&exclude=hourly,minutely&appid=fdd4a04e93a26488d7033be9fdc7f5e6';
