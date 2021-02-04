@@ -42,3 +42,11 @@ p {
 .card-body {
     width: 33%
 }
+
+.uv-safe{
+    background-color: #6886c5;
+}
+
+.uv-unsafe{
+    background-color: #F05454;
+}

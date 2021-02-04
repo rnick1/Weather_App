@@ -45,6 +45,13 @@ function searchWeather(searchedCity) {
                 currentWeather.append(temperature);
                 currentWeather.append(humidity);
                 currentWeather.append(uvIndex);
+                if(uvIndex > 7.99) {
+                uvIndex.setAttribute('class', 'uv-unsafe')
+                }
+                else{
+                uvIndex.setAttribute('class', 'uv-safe')
+                }
+
                 // This for-loop gathers and displays weather information for a five day period.
                 for(var i = 0; i < 5; i++) {
                 var forecastDiv = document.createElement('div');
