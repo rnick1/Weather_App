@@ -22,7 +22,7 @@ function searchWeather(searchedCity) {
             var cityName = document.createElement('h3');
             var currentDate = document.createElement('p')
             cityName.textContent = data.name;
-            currentDate.textContent = (moment().format('MMMM Do YYYY, h:mm a'));
+            currentDate.textContent = moment().format('l');
             currentWeather.append(cityName);
             currentWeather.append(currentDate);
         // This fetch request takes the data gathered in the previous fetch request and collects more details regarding wind speed, temperature, 
@@ -65,7 +65,8 @@ function searchWeather(searchedCity) {
                 var forTemperature = document.createElement('p');
                 var forHumidity = document.createElement('p');
                 var forUVI = document.createElement('p');
-                day.textContent = [i+1] + ' day(s) out';
+                day.textContent = moment().add(i, 'days').format('l');  
+                // [i+1] + ' day(s) out';
                 forWindSpeed.textContent = 'Wind Speed: ' + data.daily[i].wind_speed + ' MPH';
                 forTemperature.textContent = 'Temperature: ' + data.daily[i].temp.day + ' degrees F';
                 forHumidity.textContent = 'Humidity: ' + data.daily[i].humidity + ' %';
