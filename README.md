@@ -26,8 +26,6 @@ THEN I am again presented with current and future conditions for that city
 -Within the weather information I included weather icons depicting the weather conditions and set the UV index to change color when the UV conditions reach hazardous levels.
 
 ## Future improvements:
--Most urgent: I am hoping to fix the issue where the weather icon for the first day of the weather forecast is missing before turning in assignment.
-
 -I would like to refine the style further someday.
 
 -The search history function could use some refining (for example, arrange it so that if the user searches for a city more than once, it would only get displayed once instead of multiple times.)
